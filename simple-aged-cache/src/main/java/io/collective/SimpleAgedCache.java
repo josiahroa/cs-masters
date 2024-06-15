@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SimpleAgedCache {
-    private Clock clock;
-    private Map<Object, CacheEntry> cache = new HashMap<>();
+    private final Clock clock;
+    private final Map<Object, CacheEntry> cache = new HashMap<>();
 
     public SimpleAgedCache(Clock clock) {
         this.clock = clock;
@@ -49,8 +49,8 @@ public class SimpleAgedCache {
     }
 
     private static class CacheEntry {
-        private Object value;
-        private Instant expirationTime;
+        private final Object value;
+        private final Instant expirationTime;
 
         CacheEntry(Object value, Instant expirationTime) {
             this.value = value;
