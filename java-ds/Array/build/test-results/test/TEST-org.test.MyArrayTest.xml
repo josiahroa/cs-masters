@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.test.MyArrayTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-28T06:10:56" hostname="Josiahs-MacBook-Pro.local" time="0.005">
+  <properties/>
+  <testcase name="isEmpty()" classname="org.test.MyArrayTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
