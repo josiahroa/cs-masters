@@ -45,7 +45,10 @@ public class Generator {
         }
     }
 
-    // Factory class for creating random number generators based on the given generator id
+    /**
+     * Factory class for creating random number generators based on the given generator id.
+     * This is useful for adding new random number generators in the future without modifying the code.
+     */
     class RandomNumberGeneratorFactory {
         public RandomNumberGenerator getRandomNumberGenerator(int randNumGen) {
             if (randNumGen == 0) return new RandRandomNumberGenerator();
@@ -75,6 +78,12 @@ public class Generator {
         return randomValues;
     }
 
+    /**
+     * Calculates the mean of the randomValues provided
+     *
+     * @param randomValues
+     * @return the mean of the randomValues
+     */
     private double mean(ArrayList<Double> randomValues) {
         double sum = 0;
         for (double value : randomValues) {
@@ -83,6 +92,12 @@ public class Generator {
         return sum / randomValues.size();
     }
 
+    /**
+     * Calculates the sample standard deviation of the randomValues provided
+     *
+     * @param randomValues
+     * @return the sample standard deviation of the randomValues
+     */
     private double stddev(ArrayList<Double> randomValues) {
         double mean = mean(randomValues);
         double sum = 0;
@@ -92,6 +107,12 @@ public class Generator {
         return Math.sqrt(sum / randomValues.size());
     }
 
+    /**
+     * Calculates the minimum of the randomValues provided
+     *
+     * @param randomValues
+     * @return the minimum of the randomValues
+     */
     private double min(ArrayList<Double> randomValues) {
         double min = randomValues.get(0);
         for (double value : randomValues) {
@@ -102,6 +123,12 @@ public class Generator {
         return min;
     }
 
+    /**
+     * Calculates the maximum of the randomValues provided
+     *
+     * @param randomValues
+     * @return the maximum of the randomValues
+     */
     private double max(ArrayList<Double> randomValues) {
         double max = randomValues.get(0);
         for (double value : randomValues) {
@@ -137,6 +164,7 @@ public class Generator {
      */
     void display(ArrayList<Double> results, boolean headerOn) {
         // Utilize DecimalFormat to reduce the number of decimal places to 4 to keep the output clean
+        // https://docs.oracle.com/javase/8/docs/api/index.html?java/text/DecimalFormat.html
         DecimalFormat df = new DecimalFormat("#.####");
 
         double n = results.get(0);
