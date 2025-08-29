@@ -11,6 +11,7 @@ import java.text.DecimalFormat;
  * 8/28/2025
  */
 public class Generator {
+    // Example: class attribute
     // Define the width of the columns in the output for consistency in the display output
     private static final int COL_WIDTH = 10;
     
@@ -19,45 +20,59 @@ public class Generator {
         g.execute();
     }
 
+    // Example: class definition
     // Provides a common interface for all random number generators to implement
     interface RandomNumberGenerator {
+        // Example: method definition
         public double generateRandomNumber();
     }
 
+    // Example: class definition
     // Random number generator that uses the Java.util.Random class
     class RandRandomNumberGenerator implements RandomNumberGenerator {
+        // Example: method definition
         public double generateRandomNumber() {
             return new Random().nextDouble();
         }
     }
 
+    // Example: class definition
     // Random number generator that uses the Math.random() method
     class MathRandomNumberGenerator implements RandomNumberGenerator {
+        // Example: method definition
         public double generateRandomNumber() {
             return Math.random();
         }
     }
 
+    // Example: class definition
     // Random number generator that uses the ThreadLocalRandom class
     class ThreadLocalRandomRandomNumberGenerator implements RandomNumberGenerator {
+        // Example: method definition
         public double generateRandomNumber() {
             return ThreadLocalRandom.current().nextDouble();
         }
     }
 
+    // Example: class definition
     /**
      * Factory class for creating random number generators based on the given generator id.
      * This is useful for adding new random number generators in the future without modifying the code.
      */
     class RandomNumberGeneratorFactory {
+        // Example: method definition
         public RandomNumberGenerator getRandomNumberGenerator(int randNumGen) {
+            // Example: instantiation
             if (randNumGen == 0) return new RandRandomNumberGenerator();
+            // Example: instantiation
             if (randNumGen == 1) return new MathRandomNumberGenerator();
+            // Example: instantiation
             if (randNumGen == 2) return new ThreadLocalRandomRandomNumberGenerator();
             return null;
         }
     }
 
+    // Example: method definition
     /**
      * Creates an array list of n random numbers using a specified random number generator
      *
@@ -67,6 +82,7 @@ public class Generator {
      */
     ArrayList<Double> populate(int n, int randNumGen) {
         ArrayList<Double> randomValues = new ArrayList<>();
+        // Example: instantiation
         RandomNumberGeneratorFactory factory = new RandomNumberGeneratorFactory();
         RandomNumberGenerator generator = factory.getRandomNumberGenerator(randNumGen);
 
@@ -78,6 +94,8 @@ public class Generator {
         return randomValues;
     }
 
+    // Example: method definition
+    // Example: accessibility
     /**
      * Calculates the mean of the randomValues provided
      *
@@ -92,6 +110,8 @@ public class Generator {
         return sum / randomValues.size();
     }
 
+    // Example: method definition
+    // Example: accessibility
     /**
      * Calculates the sample standard deviation of the randomValues provided
      *
@@ -107,6 +127,8 @@ public class Generator {
         return Math.sqrt(sum / randomValues.size());
     }
 
+    // Example: method definition
+    // Example: accessibility
     /**
      * Calculates the minimum of the randomValues provided
      *
@@ -123,6 +145,8 @@ public class Generator {
         return min;
     }
 
+    // Example: method definition
+    // Example: accessibility
     /**
      * Calculates the maximum of the randomValues provided
      *
@@ -139,6 +163,7 @@ public class Generator {
         return max;
     }
  
+    // Example: method definition
     /**
      * Calculates mean, sample standard deviation, minimum, and maximum
      * from the randomValues provided
@@ -156,6 +181,7 @@ public class Generator {
         return results; 
     }
 
+    // Example: method definition
     /**
      * Displays the results in the format from the project description
      * 
@@ -163,6 +189,7 @@ public class Generator {
      * @param headerOn
      */
     void display(ArrayList<Double> results, boolean headerOn) {
+        // Example: instantiation
         // Utilize DecimalFormat to reduce the number of decimal places to 4 to keep the output clean
         // https://docs.oracle.com/javase/8/docs/api/index.html?java/text/DecimalFormat.html
         DecimalFormat df = new DecimalFormat("#.####");
