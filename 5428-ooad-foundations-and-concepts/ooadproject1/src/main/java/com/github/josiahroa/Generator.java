@@ -11,8 +11,10 @@ import java.text.DecimalFormat;
  * 8/28/2025
  */
 public class Generator {
-    // Example: class attribute
-    // Define the width of the columns in the output for consistency in the display output
+    /**
+     * Example: class attribute
+     * Define the width of the columns in the output for consistency in the display output
+     */
     private static final int COL_WIDTH = 10;
     
     public static void main(String[] args) {
@@ -20,15 +22,19 @@ public class Generator {
         g.execute();
     }
 
-    // Example: class definition
-    // Provides a common interface for all random number generators to implement
+    /**
+     * Example: class definition
+     * Provides a common interface for all random number generators to implement
+     */
     interface RandomNumberGenerator {
         // Example: method definition
         public double generateRandomNumber();
     }
 
-    // Example: class definition
-    // Random number generator that uses the Java.util.Random class
+    /**
+     * Example: class definition
+     * Random number generator that uses the Java.util.Random class
+     */
     class RandRandomNumberGenerator implements RandomNumberGenerator {
         // Example: method definition
         public double generateRandomNumber() {
@@ -36,8 +42,10 @@ public class Generator {
         }
     }
 
-    // Example: class definition
-    // Random number generator that uses the Math.random() method
+    /**
+     * Example: class definition
+     * Random number generator that uses the Math.random() method
+     */
     class MathRandomNumberGenerator implements RandomNumberGenerator {
         // Example: method definition
         public double generateRandomNumber() {
@@ -45,8 +53,10 @@ public class Generator {
         }
     }
 
-    // Example: class definition
-    // Random number generator that uses the ThreadLocalRandom class
+    /**
+     * Example: class definition
+     * Random number generator that uses the ThreadLocalRandom class
+     */
     class ThreadLocalRandomRandomNumberGenerator implements RandomNumberGenerator {
         // Example: method definition
         public double generateRandomNumber() {
@@ -54,8 +64,8 @@ public class Generator {
         }
     }
 
-    // Example: class definition
     /**
+     * Example: class definition
      * Factory class for creating random number generators based on the given generator id.
      * This is useful for adding new random number generators in the future without modifying the code.
      */
@@ -72,8 +82,9 @@ public class Generator {
         }
     }
 
-    // Example: method definition
+    
     /**
+     * Example: method definition
      * Creates an array list of n random numbers using a specified random number generator
      *
      * @param n the number of random numbers to generate
@@ -94,9 +105,9 @@ public class Generator {
         return randomValues;
     }
 
-    // Example: method definition
-    // Example: accessibility
     /**
+     * Example: method definition
+     * Example: accessibility
      * Calculates the mean of the randomValues provided
      *
      * @param randomValues
@@ -110,9 +121,9 @@ public class Generator {
         return sum / randomValues.size();
     }
 
-    // Example: method definition
-    // Example: accessibility
     /**
+     * Example: method definition
+     * Example: accessibility
      * Calculates the sample standard deviation of the randomValues provided
      *
      * @param randomValues
@@ -127,9 +138,9 @@ public class Generator {
         return Math.sqrt(sum / randomValues.size());
     }
 
-    // Example: method definition
-    // Example: accessibility
     /**
+     * Example: method definition
+     * Example: accessibility
      * Calculates the minimum of the randomValues provided
      *
      * @param randomValues
@@ -145,9 +156,9 @@ public class Generator {
         return min;
     }
 
-    // Example: method definition
-    // Example: accessibility
     /**
+     * Example: method definition
+     * Example: accessibility
      * Calculates the maximum of the randomValues provided
      *
      * @param randomValues
@@ -163,8 +174,8 @@ public class Generator {
         return max;
     }
  
-    // Example: method definition
     /**
+     * Example: method definition
      * Calculates mean, sample standard deviation, minimum, and maximum
      * from the randomValues provided
      *
@@ -181,8 +192,8 @@ public class Generator {
         return results; 
     }
 
-    // Example: method definition
     /**
+     * Example: method definition
      * Displays the results in the format from the project description
      * 
      * @param results
